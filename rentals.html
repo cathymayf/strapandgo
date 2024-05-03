@@ -45,21 +45,72 @@
      </ul>
 
     
+   
+    
+    <div id="slideshow">
+    <img src="images/image_1.jpg" alt="Image 1" width="320"  height="320">
+    <img src="images/image_2.jpg" alt="Image 2" width="320"  height="320">
+    <img src="images/image_3.jpg" alt="Image 3" width="320"  height="320">
+    <img src="images/image_4.jpg" alt="Image 4" width="320"  height="320">
+    <img src="images/image_5.jpg" alt="Image 5" width="320"  height="320">
+    <img src="images/image_6.jpg" alt="Image 6" width="320"  height="320">
+    <img src="images/image_7.jpg" alt="Image 7" width="320"  height="320">
+    <img src="images/image_8.jpg" alt="Image 8" width="320"  height="320">
+    <img src="images/image_9.jpg" alt="Image 9" width="320"  height="320">
+    <img src="images/image_10.jpg" alt="Image 10" width="320"  height="320">
+    <img src="images/image_11.jpg" alt="Image 11" width="320"  height="320">
+    <img src="images/image_12.jpg" alt="Image 12" width="320"  height="320">
+    <img src="images/image_13.jpg" alt="Image 13" width="320"  height="320">
+    <img src="images/image_14.jpg" alt="Image 14" width="320"  height="320">
+    <img src="images/image_15.jpg" alt="Image 15" width="320"  height="320">
+   
+    
+    <!-- Add more images as needed -->
     </div>
     
-    <div class="side">
+</div>
+
     
+    <div class="side">
+ <!--   
     <a href="https://neighborstrailer.com/trailer-detail/car-hauler-trailer-1835" target="_blank">
-    <img class=image src="images/18ft_Car_Hauler_for_Rent_411_518.png"  width="411"  height="518"alt="Strap and Go" style="float: right"  > 
+ -->   
+    
+    <img class=image src="images/18ft_Car_Hauler_for_Rent_411_518.png"  width="411"  height="518"alt="Strap and Go" style="float: right" usemap="#rent_trailers_18" > 
     </a>
     
     <p>&nbsp;</p>
     <p>&nbsp;</p>
    
-    
+ <!--   
     <a href="https://neighborstrailer.com/trailer-detail/car-hauler-2645" target="_blank">
-    <img class=image src="images/20ft_Car_Hauler_for_Rent_414_520.png"  width="414"  height="520"alt="Strap and Go" style="float: left"  >
+ -->   
+    
+    <img class=image src="images/20ft_Car_Hauler_for_Rent_414_520.png"  width="414"  height="520"alt="Strap and Go" style="float: left" usemap="#rent_trailers_20" >
     </a>
+    
+    
+   <map name="rent_trailers_18">
+   
+    <area href="https://neighborstrailer.com/trailer-detail/car-hauler-trailer-1835" 
+          shape="rect" 
+          alt="18ft Trailer"
+          title="18ft Trailer" 
+          coords="10,0   405,509" target="_blank">
+    </map>      
+          
+          
+   <map name="rent_trailers_20">    
+   
+    <area href="https://neighborstrailer.com/trailer-detail/car-hauler-2645"
+          shape="rect" 
+          alt="20ft Trailer"
+          title="20ft Trailer" 
+          coords="6,6   406,505" target="_blank">     
+     
+     </map> 
+    
+    
     
     </div>
   
@@ -70,7 +121,41 @@
   <p id="copyright"> Copyright 2024 Strap and Go Car and Cargo Hauler Rentals </p>
 </div>
 
+   <script>
+    var currentIndex = 0;
+    var slides = document.querySelectorAll('#slideshow img');
 
+    function showSlide(index) {
+        // Hide all slides
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+        // Display the chosen slide
+        slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+        currentIndex++;
+        if (currentIndex >= slides.length) {
+            currentIndex = 0;
+        }
+        showSlide(currentIndex);
+    }
+
+    function previousSlide() {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = slides.length - 1;
+        }
+        showSlide(currentIndex);
+    }
+
+    // Show the first slide initially
+    showSlide(currentIndex);
+
+    // Automatically transition to the next slide every 3 seconds
+    setInterval(nextSlide, 3000);
+</script>
 
 </body>
 </html>
